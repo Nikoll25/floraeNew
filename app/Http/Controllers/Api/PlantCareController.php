@@ -19,11 +19,10 @@ class PlantCareController extends Controller
     {
         // Valida las instrucciones de cuidado y la planta relacionada.
         $data = $request->validate([
-            'watering' => ['required', 'string'],
-            'light' => ['required', 'string'],
-            'temperature' => ['required', 'string'],
-            'fertilization' => ['required', 'string'],
-            'plant_id' => ['required', 'exists:plants,id'],
+        'plant_id' => 'nullable|exists:plants,id',
+        'tipo' => 'required|string|max:255',
+        'descripcion' => 'required|string|max:255',
+        'frecuencia' => 'nullable|string|max:255',
         ]);
 
         return response()->json(plant_care::create($data)->load('plant'), 201);
@@ -37,11 +36,10 @@ class PlantCareController extends Controller
     public function update(Request $request, plant_care $plantcare)
     {
         $data = $request->validate([
-            'watering' => ['sometimes', 'required', 'string'],
-            'light' => ['sometimes', 'required', 'string'],
-            'temperature' => ['sometimes', 'required', 'string'],
-            'fertilization' => ['sometimes', 'required', 'string'],
-            'plant_id' => ['sometimes', 'required', 'exists:plants,id'],
+        'plant_id' => 'nullable|exists:plants,id',
+        'tipo' => 'required|string|max:255',
+        'descripcion' => 'required|string|max:255',
+        'frecuencia' => 'nullable|string|max:255',
         ]);
 
         $plantcare->update($data);

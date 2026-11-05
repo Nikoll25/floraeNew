@@ -13,7 +13,10 @@ class plague extends Model
         'plague_name',
         'scientific_name',
         'plague_description',
-        'plague_symptom',
+        'plague_symptom1',
+        'plague_symptom2',
+        'plague_symptom3',
+        'plague_symptom4',
         'image_plague_id',
     ];
 

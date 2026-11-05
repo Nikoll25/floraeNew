@@ -35,6 +35,21 @@
                                     name="scientific_name" required>
                             </div>
                             <div class="mb-4">
+                                <label for="recomendacion" class="form-label fw-semibold text-secondary">Recomendación</label>
+                                <input type="text" class="form-control form-control-lg" id="recomendacion"
+                                    name="recomendacion" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="warning" class="form-label fw-semibold text-secondary">Advertencia</label>
+                                <input type="text" class="form-control form-control-lg" id="warning"
+                                    name="warning" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="clima" class="form-label fw-semibold text-secondary">clima</label>
+                                <input type="text" class="form-control form-control-lg" id="clima"
+                                    name="clima" required>
+                            </div>
+                            <div class="mb-4">
                                 <label for="plant_description"
                                     class="form-label fw-semibold text-secondary">Descripción</label>
                                 <textarea class="form-control" id="plant_description" name="plant_description" rows="4" required></textarea>

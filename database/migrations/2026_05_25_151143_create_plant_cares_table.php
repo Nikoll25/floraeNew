@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('tipo');
             $table->string('descripcion');
-            $table->string('frecuencia');
+            $table->string('frecuencia')->nullable();
 
             $table->unsignedBigInteger('plant_id')->nullable();
 

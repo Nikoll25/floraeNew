@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('scientific_name');
 
             $table->text('plague_description');
-            $table->text('plague_symptom');
+            $table->text('plague_symptom1');
+            $table->text('plague_symptom2');
+            $table->text('plague_symptom3');
+            $table->text('plague_symptom4');
 
             $table->unsignedBigInteger('image_plague_id')->nullable();
 

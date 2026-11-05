@@ -17,11 +17,10 @@ return new class extends Migration
             $table->string('common_name');
             $table->string('scientific_name');
             $table->text('plant_description');
-
             $table->string('recomendacion');
             $table->string('warning');
-
             $table->string('origin');
+            $table->string('clima');
             $table->string('type');
             $table->string('size');
 

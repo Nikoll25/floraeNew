@@ -11,21 +11,26 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plague_symptoms', function (Blueprint $table) {
+        Schema::create('treatments', function (Blueprint $table) {
             $table->id();
+
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('status');
+            $table->text('description');
+
+            $table->string('duracion');
+
+            $table->string('paso1');
+            $table->string('paso2');
+            $table->string('paso3');
+            $table->string('paso4');
 
             $table->unsignedBigInteger('plague_id')->nullable();
 
             $table->foreign('plague_id')
                 ->references('id')
                 ->on('plagues')
-                ->nullOnDelete();
-
-            $table->unsignedBigInteger('symptom_id')->nullable();
-
-            $table->foreign('symptom_id')
-                ->references('id')
-                ->on('symptoms')
                 ->nullOnDelete();
 
             $table->timestamps();
@@ -37,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('plague_symptoms');
+        Schema::dropIfExists('treatments');
     }
 };

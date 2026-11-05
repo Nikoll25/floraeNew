@@ -25,12 +25,9 @@ class PlantController extends Controller
             'scientific_name' => ['required', 'string', 'max:255'],
             'plant_description' => ['required', 'string'],
             'recomendacion' => ['required', 'string', 'max:255'],
-            'clima' => ['required', 'string', 'max:255'],
-            'riego' => ['required', 'string', 'max:255'],
-            'luz' => ['required', 'string', 'max:255'],
-            'temperatura' => ['required', 'string', 'max:255'],
-            'fertilizacion' => ['required', 'string', 'max:255'],
+            'warning' => ['required', 'string', 'max:255'],
             'origin' => ['required', 'string', 'max:255'],
+            'clima' => ['required', 'string', 'max:255'],
             'type' => ['required', 'string', 'max:255'],
             'size' => ['required', 'string', 'max:255'],
             'image_plant_id' => ['nullable', 'exists:image_plants,id'],
@@ -43,7 +40,7 @@ class PlantController extends Controller
 
     public function show(plant $plant)
     {
-        return response()->json($plant->load('image_plant'));
+        return response()->json($plant->load('image_plant', 'plant_cares'));
     }
 
     public function update(Request $request, plant $plant)

@@ -16,6 +16,7 @@ class plant extends Model
         'origin',
         'type',
         'size',
+        'clima',
         'recomendacion',
         'warning',
         'image_plant_id',
@@ -36,7 +37,10 @@ class plant extends Model
         return $this->hasMany(\App\Models\care_record::class);
     }
 
-
+    public function plant_cares()
+    {
+        return $this->hasMany(\App\Models\plant_care::class, 'plant_id');
+    }
 
     public function warnings()
     {
